@@ -2,6 +2,8 @@
   "name": "laier",
   "description": "Plugin to organize CSS z-index layers.",
   "version": "0.0.0-development",
+  "repository": "github:tobua/laier",
+  "homepage": "https://tobua.github.io/laier",
   "license": "MIT",
   "author": "Matthias Giger",
   "scripts": {
