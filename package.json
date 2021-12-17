@@ -1,0 +1,48 @@
+{
+  "name": "laier",
+  "description": "Plugin to organize CSS z-index layers.",
+  "version": "0.0.0-development",
+  "license": "MIT",
+  "author": "Matthias Giger",
+  "scripts": {
+    "build": "padua build",
+    "start": "padua watch",
+    "test": "padua test"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "exports": {
+    "default": "./dist/index.js"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "css",
+    "layer",
+    "z-index",
+    "zIndex"
+  ],
+  "devDependencies": {
+    "padua": "^0.5.0"
+  },
+  "prettier": "padua/configuration/.prettierrc.json",
+  "eslintConfig": {
+    "extends": "./node_modules/padua/configuration/eslint.cjs"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "./tsconfig.json"
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  },
+  "engines": {
+    "node": ">= 14"
+  }
+}

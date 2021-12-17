@@ -1,0 +1,31 @@
+name: push
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - name: 🧪 Test
+        run: npm test
+      - name: Build Demo 🛠️
+        run: |
+          cd demo
+          npm install
+          npx papua build
+      - name: Deploy Demo 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: demo
+          folder: demo/dist
+      - name: 🚧 Build
+        run: npm run build
+      - name: 📢 Release
+        uses: tobua/release-npm-action@v1
+        with:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
