@@ -12,12 +12,12 @@ jobs:
       - run: npm install
       - name: 🧪 Test
         run: npm test
-      - name: Build Demo 🛠️
+      - name: 🛠️ Build Demo
         run: |
           cd demo
           npm install
           npx papua build
-      - name: Deploy Demo 🚀
+      - name: 🚀 Deploy Demo
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: demo

@@ -19,9 +19,3 @@ test('Layers start at one and count upwards.', () => {
   expect(ManyLayers.Popup).toBe(3)
   expect(ManyLayers.CloseButton).toBe(4)
 })
-
-test('Failing test.', () => {
-  const Layer = configureLayer(['Base'])
-
-  expect(Layer.Base).toBe(2)
-})
