@@ -28,7 +28,7 @@
     "zIndex"
   ],
   "devDependencies": {
-    "padua": "^0.5.0"
+    "padua": "^0.5.1"
   },
   "prettier": "padua/configuration/.prettierrc.json",
   "eslintConfig": {
