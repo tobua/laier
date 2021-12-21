@@ -2,12 +2,10 @@
   <img src="https://github.com/tobua/laier/raw/main/logo.png" alt="laier" width="300">
 </p>
 
-# naven
+# laier
 
 [![laier Demo](https://img.shields.io/static/v1?label=laier&message=Demo&color=brightgreen)](https://tobua.github.io/laier)
 [![npm](https://img.shields.io/npm/v/laier)](https://npmjs.com/laier)
-
-# laier
 
 Plugin to organize CSS `z-index` layers.
 
@@ -31,4 +29,4 @@ import { Layer } from '../../index'
 export const MyComponent = () => <div style={{ zIndex: Layer.Popup }}>Hello World</div>
 ```
 
-When a new layer is needed it can be added into the initially configured order without having to adapt all other `z-index`'s everywhere. Also, there is no need to calculate any numbers by hand and when **TypeScript** is used it will ensure onlythe available layers are used.
+When a new layer is needed it can be added into the initially configured order without having to adapt all other `z-index`'s everywhere. Also, there is no need to calculate any numbers by hand and when **TypeScript** is used it will ensure only the available layers are used.
