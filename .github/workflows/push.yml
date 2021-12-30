@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  test-publish-build-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,7 +17,7 @@ jobs:
           cd demo
           npm install
           npx papua build
-      - name: 🚀 Deploy Demo
+      - name: 🚀 Publish Demo
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: demo
