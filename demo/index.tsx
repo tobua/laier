@@ -1,9 +1,9 @@
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import configureLayer from 'laier'
 
 const Layer = configureLayer(['Base', 'Popup', 'Modal'])
 
-render(
+createRoot(document.body as HTMLElement).render(
   <>
     <div
       style={{
@@ -89,6 +89,5 @@ render(
         }}
       />
     </div>
-  </>,
-  document.body
+  </>
 )
