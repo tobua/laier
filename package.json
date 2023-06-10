@@ -49,6 +49,9 @@
       ]
     }
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "engines": {
     "node": ">= 16"
   }
