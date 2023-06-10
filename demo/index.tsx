@@ -2,6 +2,40 @@ import { createRoot } from 'react-dom/client'
 import configureLayer from 'laier'
 
 const Layer = configureLayer(['Base', 'Popup', 'Modal'])
+const ToneMappedLayer = configureLayer(['Base', 'Popup', 'Modal'], '#FF00FF')
+
+const ToneMappedSurfaces = () => (
+  <div
+    style={{
+      padding: '2vw',
+      borderRadius: 10,
+      background: ToneMappedLayer.Base.color,
+      zIndex: ToneMappedLayer.Base.index,
+    }}
+  >
+    <div
+      style={{
+        padding: '4vw',
+        borderRadius: 20,
+        background: ToneMappedLayer.Popup.color,
+        zIndex: ToneMappedLayer.Popup.index,
+      }}
+    >
+      <div
+        style={{
+          padding: '2vw',
+          borderRadius: 10,
+          background: ToneMappedLayer.Modal.color,
+          zIndex: ToneMappedLayer.Modal.index,
+        }}
+      >
+        <p style={{ color: 'white', fontFamily: 'sans-serif', fontWeight: 'bold' }}>
+          Tone Mapped Surface Colors
+        </p>
+      </div>
+    </div>
+  </div>
+)
 
 createRoot(document.body as HTMLElement).render(
   <>
@@ -59,6 +93,18 @@ createRoot(document.body as HTMLElement).render(
           left: 20,
         }}
       />
+      <div
+        style={{
+          position: 'relative',
+          display: 'flex',
+          flex: 1,
+          height: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <ToneMappedSurfaces />
+      </div>
     </div>
     <div
       style={{

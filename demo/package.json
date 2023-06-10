@@ -4,7 +4,7 @@
     "icon": "../logo.png"
   },
   "dependencies": {
-    "papua": "^3.0.1",
+    "papua": "^4.3.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
