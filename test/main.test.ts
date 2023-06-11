@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import configureLayer from '../index'
 
 test('Layers start at one and count upwards.', () => {
@@ -9,8 +10,15 @@ test('Layers start at one and count upwards.', () => {
 
   const MultipleLayers = configureLayer(['Base', 'Popup'])
 
+  // @ts-expect-error
+  expect(MultipleLayers.Base.index).toBeUndefined()
+
   expect(MultipleLayers.Base).toBe(1)
   expect(MultipleLayers.Popup).toBe(2)
+
+  // @ts-expect-error
+  expect(MultipleLayers.Base === 'hey').toBe(false)
+  expect(MultipleLayers.Base === 5).toBe(false)
 
   const ManyLayers = configureLayer(['Base', 'Modal', 'Popup', 'CloseButton'])
 
@@ -36,4 +44,7 @@ test('Various shades are generated for every layer.', () => {
   expect(SecondLayer.Modal.color).toBe('#33FF33')
   expect(SecondLayer.Popup.index).toBe(3)
   expect(SecondLayer.Popup.color).toBe('#66FF66')
+
+  // @ts-expect-error
+  expect(SecondLayer.Base === 5).toBe(false)
 })
