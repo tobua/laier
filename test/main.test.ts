@@ -1,4 +1,5 @@
-import { expect, test } from 'vitest'
+import { type CSSProperties } from 'react'
+import { expect, test } from 'bun:test'
 import configureLayer from '../index'
 
 test('Layers start at one and count upwards.', () => {
@@ -47,4 +48,20 @@ test('Various shades are generated for every layer.', () => {
 
   // @ts-expect-error
   expect(SecondLayer.Base === 5).toBe(false)
+})
+
+test('Types can properly be assigned to CSS values.', () => {
+  const Layers = configureLayer(['Base', 'Modal'])
+  const ColoredLayers = configureLayer(['Base', 'Modal'], '#EFEFEF')
+
+  const styles: CSSProperties = {
+    zIndex: Layers.Modal,
+  }
+
+  const coloredStyles: CSSProperties = {
+    zIndex: ColoredLayers.Modal.index,
+  }
+
+  expect(styles.zIndex).toBe(2)
+  expect(coloredStyles.zIndex).toBe(2)
 })
